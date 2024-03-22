@@ -1,12 +1,12 @@
 # Internal typhoon environment api
 
 [build-system]
-requires = ["setuptools", "Cython==3.0.0", "wheel"]
+requires = ["setuptools", "Cython", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "Test_for_gens"
-authors = [{name = "Tiarles, o Brabo"}]
+name = "cy_wheel_gens_tests"
+authors = [{name = "Tiarles Guterres"}]
 description = "Test for generators after cythonization"
 version = "0.1.0"
 

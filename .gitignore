@@ -1,0 +1,6 @@
+old_run_script.ps1
+venv/*
+dist/*
+build/*
+__pycache__/*
+**/*.egg-info/*
