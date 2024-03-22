@@ -11,7 +11,7 @@ def test_cy_gens():
 
     try:
         for i in my_generator_cy():
-            logger.info("test:", i)
+            print("\ttest:", i)
     except OSError:
         pass
 
