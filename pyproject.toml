@@ -17,4 +17,4 @@ include = ["*"]  # package names should match these glob patterns (["*"] by defa
 # namespaces = false  # to disable scanning PEP 420 namespaces (true by default)
 
 [project.entry-points."pytest11"]
-"cy_wheel_gens_tests" = "pytest_hooks_gens.plugin"
+"pytest_hooks_gens" = "test_gens.pytest_hooks_gens.plugin"

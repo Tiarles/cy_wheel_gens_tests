@@ -9,13 +9,13 @@ ext_modules = None
 
 if "bdist_wheel" in sys.argv:
     try:
-        os.remove(os.path.join(FOLDER_DIR_PATH, R"src\pytest_hooks_gens\plugin.py"))
+        os.remove(os.path.join(FOLDER_DIR_PATH, R"src\test_gens\pytest_hooks_gens\plugin.py"))
     except FileNotFoundError:
         pass
 
     for src_rel, dst_rel in [ 
         ("main.py", R"src\test_gens\impl.pyx"),
-        ("plugin.py", R"src\pytest_hooks_gens\plugin.pyx")
+        ("plugin.py", R"src\test_gens\pytest_hooks_gens\plugin.pyx")
     ]:
         shutil.copy(
             src=os.path.join(FOLDER_DIR_PATH, src_rel),
@@ -27,8 +27,10 @@ if "bdist_wheel" in sys.argv:
     try:
         language_level = 3
         ext_modules = cythonize(
-            [R"src\test_gens\impl.pyx",
-             R"src\pytest_hooks_gens\plugin.pyx"],
+            [
+                R"src\test_gens\impl.pyx",
+                R"src\test_gens\pytest_hooks_gens\plugin.pyx"
+            ],
             compiler_directives={
                 "binding": True,  # so inspect function works properly on cythonized functions
                 "language_level": language_level,
@@ -41,7 +43,7 @@ if "bdist_wheel" in sys.argv:
 
     for pyx_file in [
         R"src\test_gens\impl.pyx",
-        R"src\pytest_hooks_gens\plugin.pyx"
+        R"src\test_gens\pytest_hooks_gens\plugin.pyx"
     ]:
         os.remove(os.path.join(FOLDER_DIR_PATH, pyx_file))
 
